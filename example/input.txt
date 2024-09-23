@@ -1,0 +1,6 @@
+File descriptors and fork interact to make I/O redirection easy to implement. Fork copies
+the parent’s file descriptor table along with its memory, so that the child starts with exactly the
+same open files as the parent. The system call exec replaces the calling process’s memory but
+preserves its file table. This behavior allows the shell to implement I/O redirection by forking, reopening chosen file descriptors in the child, and then calling exec to run the new program. Here
+is a simplified version of the code a shell runs for the command cat < input.txt:
+
