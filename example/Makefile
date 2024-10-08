@@ -14,7 +14,8 @@ execvp1:execvp1.c EXEC.c
 	./execvp1
 
 fork_offset:fork_offset.c
-
+dup1:dup1.c
+pipe1:pipe1.c
 .PNONY:clean
 clean:
 	find . -type f -executable -exec rm '{}' \;
